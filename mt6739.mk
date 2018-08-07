@@ -31,3 +31,6 @@ PRODUCT_COPY_FILES += \
 # VNDK
 PRODUCT_PACKAGES += \
     vndk_package
+
+# Properties
+-include $(LOCAL_PATH)/common-props.mk
