@@ -5,6 +5,7 @@
 #
 
 # Inherit from those products. Most specific first.
+include $(SRC_TARGET_DIR)/product/treble_common.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
@@ -15,22 +16,10 @@ $(call inherit-product-if-exists, vendor/wiko/mt6739-common/mt6739-common-vendor
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.a2dp.default
-
-# Display
-PRODUCT_PACKAGES += \
-    libvulkan
-
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/ACCDET.kl:system/usr/keylayout/ACCDET.kl \
     $(LOCAL_PATH)/keylayout/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
-
-# VNDK
-PRODUCT_PACKAGES += \
-    vndk_package
 
 # Properties
 -include $(LOCAL_PATH)/common-props.mk

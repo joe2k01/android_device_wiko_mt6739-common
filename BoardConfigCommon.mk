@@ -73,7 +73,6 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt6739
 
 # Treble
 BOARD_VNDK_VERSION  := current
-PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Inherit from the proprietary version
 # -include vendor/wiko/mt6739-common/BoardConfigVendor.mk
