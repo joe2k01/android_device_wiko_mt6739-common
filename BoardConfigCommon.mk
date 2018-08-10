@@ -63,16 +63,28 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_MKE2FS := true
 
-TARGET_COPY_OUT_VENDOR := vendor
-
 # MTK
 BOARD_USES_MTK_HARDWARE := true
+
+# Properties
+TARGET_SYSTEM_PROP := build/make/target/board/treble_system.prop
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt6739
 
 # Treble
 BOARD_VNDK_VERSION  := current
+BOARD_VNDK_RUNTIME_DISABLE := true
+TARGET_COPY_OUT_VENDOR := vendor
+
+# TODO(b/35790399): remove when b/35790399 is fixed.
+BOARD_NAND_SPARE_SIZE := 0
+
+# b/64700195: add minimum support for odm.img
+# Currently odm.img can only be built by `make custom_images`.
+# Adding /odm mount point under root directory.
+BOARD_ROOT_EXTRA_FOLDERS += odm
 
 # Inherit from the proprietary version
 # -include vendor/wiko/mt6739-common/BoardConfigVendor.mk
