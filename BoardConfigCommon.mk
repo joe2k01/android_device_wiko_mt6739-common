@@ -73,6 +73,9 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt6739
 
+# Sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+
 # Treble
 BOARD_VNDK_VERSION  := current
 BOARD_VNDK_RUNTIME_DISABLE := true
