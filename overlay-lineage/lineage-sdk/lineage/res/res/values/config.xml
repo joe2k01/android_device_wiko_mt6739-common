@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2018, The LineageOS Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- The list of vendor package signatures that should also be considered
+         platform signatures, specifically for use on devices with a vendor partition. -->
+    <string-array name="config_vendorPlatformSignatures" translatable="false">
+        <item>308203dd308202c5a003020102020900c6ba68f73b623164300d06092a864886f70d0101050500308184310b300906035504061302434e3112301006035504080c094775616e67446f6e673111300f06035504070c085368656e5a68656e310e300c060355040a0c0554494e4e4f310e300c060355040b0c0554494e4e4f310e300c06035504030c0554494e4e4f311e301c06092a864886f70d010901160f54494e4e4f4074696e6e6f2e636f6d301e170d3135303731373033333432365a170d3432313230323033333432365a308184310b300906035504061302434e3112301006035504080c094775616e67446f6e673111300f06035504070c085368656e5a68656e310e300c060355040a0c0554494e4e4f310e300c060355040b0c0554494e4e4f310e300c06035504030c0554494e4e4f311e301c06092a864886f70d010901160f54494e4e4f4074696e6e6f2e636f6d30820122300d06092a864886f70d01010105000382010f003082010a0282010100acc333dd900026def4d1f29d6f1ec1b2c88acc58b0944e840ce8e1ab0a62e9584f3ff0bacaeabe1fc96541d2b5a4976791b35b83218adcf562439e8804c01307ba653dba69794f2d1a3a830084099f91709787a3869ad3ca34c7aa0bbd28deeda6eb5f4b97b4b3bbf81f4204228abbbaef93a290786de271b14193adc716ae902e70dfb106c8216c9c1b5a937be64152da84638e608fdf5a7c8c3454cda3668c2ec6767e58eb1c466b51a2ba4c236e921b019b70578c371250539fdfb735be5797c7995d68c079c7e241d6e10ab30882c3a25086322eb214e9c61e417bcf7c3a69bb8d1c586eedf1fb83b33a2dd7e6b6def9cee837e969e1e00b44c2dcd8ef7f0203010001a350304e301d0603551d0e04160414c48da096e2ce30026f6cf7f913b96d3658f8265d301f0603551d23041830168014c48da096e2ce30026f6cf7f913b96d3658f8265d300c0603551d13040530030101ff300d06092a864886f70d0101050500038201010060445d433fd003faa92a93839cd833dc32ababb349b37d660ddd9e20f9c9ebc200e7ce99f77ed809c277fdda541e87f56d397e94e024ccb128ae18cf41b5be06ed44aaeac28673141a5b05809c9426d599a05d518db9b3b52da6bda4ba8ef2f03026b92b8ba0d1443677805e271fe32627b27718a7d24ab3a8a814bf8a1b0383bdccbcb7f7f2a394e5703d56a39e28b95cebca62e51edf91b9a377d7de478221c7e238195b117584e34bcf3215de9b59b1905c00cb438d6ef8c1825dd207496fcd94c694b37249c1173f20f04cf30d2c6714cb8e521bb9b79754988d42387bc9c8c79e43d1655970318806c09fb7954b1da6f01294013fbeea5efed63d32fa01</item>
+    </string-array>
+
+    <!-- All the capabilities of the LEDs on this device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following capabilities present:
+         // Device has a color adjustable battery light.
+         LIGHTS_RGB_NOTIFICATION_LED = 1
+         // Device has a color adjustable notification light.
+         LIGHTS_RGB_BATTERY_LED = 2
+         LIGHTS_MULTIPLE_NOTIFICATION_LED = 4 (deprecated)
+         // The notification light has adjustable pulsing capability.
+         LIGHTS_PULSATING_LED = 8
+         // Device has a multi-segment battery light that is able to
+         // use the light brightness value to determine how many
+         // segments to show (in order to represent battery level).
+         LIGHTS_SEGMENTED_BATTERY_LED = 16
+         // The notification light supports HAL adjustable brightness
+         // via the alpha channel.
+         // Note: if a device notification light supports LIGHTS_RGB_NOTIFICATION_LED
+         // then HAL support is not necessary for brightness control.  In this case,
+         // brightness support will be provided by lineage-sdk through the scaling of
+         // RGB color values.
+         LIGHTS_ADJUSTABLE_NOTIFICATION_LED_BRIGHTNESS = 32
+         // Device has a battery light.
+         LIGHTS_BATTERY_LED = 64
+         // The battery light supports HAL adjustable brightness via
+         // the alpha channel.
+         // Note: if a device battery light supports LIGHTS_RGB_BATTERY_LED then HAL
+         // support is not necessary for brightness control.  In this case,
+         // brightness support will be provided by lineage-sdk through the scaling of
+         // RGB color values.
+         LIGHTS_ADJUSTABLE_BATTERY_LED_BRIGHTNESS = 128
+         For example, a device with notification and battery lights that supports
+         pulsating and RGB control would set this config to 75. -->
+    <integer name="config_deviceLightCapabilities">3</integer>
+
+    <!-- Hardware keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareKeys">64</integer>
+
+    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareWakeKeys">64</integer>
+
+</resources>
