@@ -1,0 +1,1 @@
+vendor/lib/libmtk-ril.so:lib/libmtk-ril.so|1823120ec918f5b2156e152a8e3040f3f300e310

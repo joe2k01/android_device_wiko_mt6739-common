@@ -94,4 +94,4 @@ BOARD_FLASH_BLOCK_SIZE := 512
 BOARD_ROOT_EXTRA_FOLDERS += odm
 
 # Inherit from the proprietary version
-# -include vendor/wiko/mt6739-common/BoardConfigVendor.mk
+-include vendor/wiko/mt6739-common/BoardConfigVendor.mk
