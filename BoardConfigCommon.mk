@@ -87,10 +87,5 @@ TARGET_COPY_OUT_VENDOR := vendor
 # TODO(b/35790399): remove when b/35790399 is fixed.
 BOARD_NAND_SPARE_SIZE := 0
 
-# b/64700195: add minimum support for odm.img
-# Currently odm.img can only be built by `make custom_images`.
-# Adding /odm mount point under root directory.
-BOARD_ROOT_EXTRA_FOLDERS += odm
-
 # Inherit from the proprietary version
 # -include vendor/wiko/mt6739-common/BoardConfigVendor.mk
