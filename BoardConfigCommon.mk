@@ -84,8 +84,5 @@ BOARD_VNDK_VERSION  := current
 BOARD_VNDK_RUNTIME_DISABLE := true
 TARGET_COPY_OUT_VENDOR := vendor
 
-# TODO(b/35790399): remove when b/35790399 is fixed.
-BOARD_NAND_SPARE_SIZE := 0
-
 # Inherit from the proprietary version
 # -include vendor/wiko/mt6739-common/BoardConfigVendor.mk
